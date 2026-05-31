@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Angel Milton — Portfolio</title>
   <style>
-   :root {
+     :root {
   --white:   #FFFFFF;
   --sage:    #BFC0C0;
   --muted:   #4F5D75;
@@ -13,7 +13,6 @@
   --tan:     #EF8354;
   --dark:    #2D3142;
 }
- 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
  
@@ -41,41 +40,6 @@
       letter-spacing: .1em; text-transform: uppercase; transition: color .2s;
     }
     .nav-links a:hover { color: var(--tan); }
- 
-    /* hamburger */
-    .nav-hamburger {
-      display: none; flex-direction: column; justify-content: center;
-      gap: 5px; cursor: pointer; padding: .3rem; background: none; border: none;
-    }
-    .nav-hamburger span {
-      display: block; width: 24px; height: 2px;
-      background: var(--sage); border-radius: 2px;
-      transition: transform .3s, opacity .3s;
-    }
-    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
-    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
- 
-    @media (max-width: 700px) {
-      .nav-hamburger { display: flex; }
-      .nav-links {
-        display: flex; flex-direction: column; gap: 0;
-        position: fixed; top: 0; right: -100%; width: 70%; max-width: 280px;
-        height: 100vh; background: var(--dark);
-        padding: 5rem 2rem 2rem;
-        transition: right .35s ease;
-        z-index: 99; list-style: none;
-        border-left: 1px solid rgba(212,163,115,.15);
-      }
-      .nav-links.open { right: 0; }
-      .nav-links li { border-bottom: 1px solid rgba(212,163,115,.1); }
-      .nav-links a { display: block; padding: 1rem 0; font-size: 1rem; letter-spacing: .12em; }
-      .nav-overlay {
-        display: none; position: fixed; inset: 0;
-        background: rgba(0,0,0,.4); z-index: 98;
-      }
-      .nav-overlay.open { display: block; }
-    }
  
     /* ── HERO ── */
     #hero {
@@ -114,7 +78,7 @@
       50% { opacity: 0.15; box-shadow: none; }
     }
     .hero-name {
-      font-size: clamp(2rem, 8vw, 5.5rem);
+      font-size: clamp(3rem, 6vw, 5.5rem);
       font-weight: 700; line-height: 1.0;
       color: var(--white); letter-spacing: -.03em;
       margin-bottom: 1.4rem;
@@ -193,7 +157,7 @@
     }
  
     /* ── EXPERIENCE ── */
-    #experience { background: var(--dark); }
+    #experience { background: #4F5D75; }
     #experience .section-title { color: var(--white); }
     #experience .section-label { color: var(--tan); }
  
@@ -204,16 +168,18 @@
     }
     .exp-card {
       padding: 2rem;
-      border: 1px solid rgba(254,250,224,.08);
+      border: 1px solid rgba(255,255,255,.08);
+      background: #2D3142;
       transition: background .3s ease, border-color .3s ease, transform .3s ease, box-shadow .3s ease;
       display: flex;
       flex-direction: column;
     }
+    /* ── FIXED: visible lift + glow on hover ── */
     .exp-card:hover {
-      background: rgba(254,250,224,.04);
-      border-color: rgba(212,163,115,.25);
-      transform: translateY(-3px);
-      box-shadow: 0 10px 32px rgba(212,163,115,.08);
+      background: #3a4060;
+      border-color: rgba(239,131,84,.45);
+      transform: translateY(-6px);
+      box-shadow: 0 20px 48px rgba(239,131,84,.22), 0 0 0 1px rgba(239,131,84,.15);
     }
     .exp-company {
       font-size: .8rem; font-weight: 700; letter-spacing: .12em;
@@ -243,27 +209,29 @@
  
     /* ── SKILLS ── */
     #skills { background: var(--muted); }
-    #skills .section-title { color: var(--dark); }
-    #skills .section-label { color: var(--dark); opacity: .7; }
+    #skills .section-title { color: var(--white); }
+    #skills .section-label { color: var(--white); opacity: .8; }
     .skills-grid {
       display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;
     }
     .skill-group {
-      background: var(--white); padding: 2rem;
+      background: var(--dark); padding: 2rem;
       border-top: 3px solid var(--tan);
       transition: transform .3s ease, box-shadow .3s ease;
     }
     .skill-group:hover {
       transform: translateY(-5px);
-      box-shadow: 0 16px 40px rgba(58,58,46,.12);
+      box-shadow: 0 16px 40px rgba(0,0,0,.25);
     }
+    /* ── FIXED: readable title ── */
     .skill-group-title {
       font-size: .78rem; font-weight: 700; letter-spacing: .15em;
-      text-transform: uppercase; color: var(--dark); opacity: .6; margin-bottom: 1.2rem;
+      text-transform: uppercase; color: var(--tan); opacity: 1; margin-bottom: 1.2rem;
     }
+    /* ── FIXED: white skill items ── */
     .skill-item {
-      font-size: .92rem; color: var(--dark);
-      padding: .5rem 0; border-bottom: 1px solid rgba(58,58,46,.1);
+      font-size: .92rem; color: var(--white);
+      padding: .5rem 0; border-bottom: 1px solid rgba(255,255,255,.1);
       transition: color .2s, padding-left .2s;
       cursor: default;
     }
@@ -429,13 +397,9 @@
 <body>
  
 <!-- NAV -->
-<div class="nav-overlay" id="navOverlay"></div>
 <nav>
   <div class="nav-logo">Angel Milton</div>
-  <button class="nav-hamburger" id="navToggle" aria-label="Toggle menu">
-    <span></span><span></span><span></span>
-  </button>
-  <ul class="nav-links" id="navLinks">
+  <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#skills">Skills</a></li>
@@ -503,7 +467,7 @@
       <div class="exp-company">SISK</div>
       <div class="exp-period">2024</div>
       <div class="exp-role">Supply Chain & Procurement Analyst</div>
-      <p class="exp-para">Built a supplier compliance framework covering 50+ suppliers aligned with CSRD, CSDDD and UN Human Rights standards, including scorecards and ESG reporting. Coordinated across 5+ internal teams to develop a structured, EU-aligned procurement strategy.</p>
+      <p class="exp-para">Designed and implemented a supplier compliance and due diligence framework aligned with emerging EU sustainability regulations (CSRD/CSDDD) and international human rights standards, supporting supplier assessment and ESG reporting initiatives.</p>
       <div class="exp-tags">
         <span class="exp-tag">ESG</span>
         <span class="exp-tag">CSRD</span>
@@ -517,7 +481,7 @@
       <div class="exp-company">Accenture</div>
       <div class="exp-period">2022 – 2024</div>
       <div class="exp-role">Packaged App Development Associate</div>
-      <p class="exp-para">Worked as a microservices developer across 3+ enterprise client projects, contributing to development, testing and deployment of modules ahead of timeline. Reduced bug resolution time by ~10% through structured debugging while collaborating across technical and non-technical teams.</p>
+      <p class="exp-para">Worked as a microservices developer across 3+ enterprise client projects, contributing to development, testing and deployment of modules ahead of timeline. Reduced bug resolution time by ~20% through structured debugging while collaborating across technical and non-technical teams.</p>
       <div class="exp-tags">
         <span class="exp-tag">Java</span>
         <span class="exp-tag">Microservices</span>
@@ -653,22 +617,6 @@
     });
   }, { threshold: 0.1 });
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
- 
-  // Hamburger menu
-  const toggle = document.getElementById('navToggle');
-  const links  = document.getElementById('navLinks');
-  const overlay = document.getElementById('navOverlay');
-  function closeMenu() {
-    toggle.classList.remove('open');
-    links.classList.remove('open');
-    overlay.classList.remove('open');
-  }
-  toggle.addEventListener('click', () => {
-    const isOpen = links.classList.contains('open');
-    isOpen ? closeMenu() : (toggle.classList.add('open'), links.classList.add('open'), overlay.classList.add('open'));
-  });
-  overlay.addEventListener('click', closeMenu);
-  links.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
 </script>
 </body>
 </html>
