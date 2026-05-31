@@ -209,13 +209,13 @@
  
     /* ── SKILLS ── */
     #skills { background: var(--muted); }
-    #skills .section-title { color: var(--white); }
+    #skills .section-title { color: var(--tan); }
     #skills .section-label { color: var(--white); opacity: .8; }
     .skills-grid {
       display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;
     }
     .skill-group {
-      background: var(--dark); padding: 2rem;
+      background: var(--white); padding: 2rem;
       border-top: 3px solid var(--tan);
       transition: transform .3s ease, box-shadow .3s ease;
     }
@@ -230,13 +230,13 @@
     }
     /* ── FIXED: white skill items ── */
     .skill-item {
-      font-size: .92rem; color: var(--white);
+      font-size: .92rem; color: var(--dark);
       padding: .5rem 0; border-bottom: 1px solid rgba(255,255,255,.1);
       transition: color .2s, padding-left .2s;
       cursor: default;
     }
     .skill-item:hover {
-      color: var(--tan);
+      color: var(--dark);
       padding-left: .4rem;
     }
     .skill-item:last-child { border-bottom: none; }
@@ -339,7 +339,7 @@
       background: var(--tan); text-align: center; padding: 6rem 4rem;
     }
     #contact .section-label { color: var(--dark); opacity: .7; }
-    #contact .section-title { color: var(--dark); margin-bottom: 1rem; }
+    #contact .section-title { color: var(--white); margin-bottom: 1rem; }
     #contact p { font-size: 1rem; color: var(--dark); margin-bottom: 2.5rem; }
     .contact-links { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
     .contact-btn {
@@ -598,7 +598,7 @@
 <section id="contact">
   <div class="section-label fade-in">Let's Connect</div>
   <div class="section-title fade-in">Open to the Right Opportunity</div>
-  <p class="fade-in">Currently looking for roles in Supply Chain Analysis, ESG, Business Analysis, Procurement. Based in Ireland.</p>
+  <p class="fade-in">Currently looking for roles in <strong>Supply Chain Analysis, ESG, Business Analysis, Procurement.</strong> Based in Ireland.</p>
   <div class="contact-links fade-in">
     <a href="mailto:angelinelal01@gmail.com" class="contact-btn primary">Email Me</a>
     <a href="https://www.linkedin.com/in/angel-milton-babu-lal" target="_blank" class="contact-btn secondary">LinkedIn</a>
@@ -607,9 +607,8 @@
  
 <!-- FOOTER -->
 <footer>
-
   <p>© Copyright 2026. Made by <strong><u>Angel Milton Babu Lal</u></strong>.</p>
-  </footer>
+</footer>
  
 <script>
   const observer = new IntersectionObserver((entries) => {
